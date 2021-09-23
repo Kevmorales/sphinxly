@@ -201,6 +201,17 @@ document.addEventListener('keypress', function(e) {
     save();
   }
 })
+
+// för att spara med enter hehe
+document.addEventListener('keypress', function(e) {
+  if(e.which == 13) {
+    save();
+  }
+})
+
+document.focusout("keydown", function(e) { //focusout funkar för iphones "klar" knapp.
+save() 
+})
             </script>
 
        
