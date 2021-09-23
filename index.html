@@ -1,219 +1,190 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Hello </title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <style>
-        body {
-            background-color: #94EFF0;
-            padding: 100px;
-            overflow: hidden;
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Hello</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        background-color: #94eff0;
+        padding: 100px;
+        overflow: hidden;
+      }
+
+      .wrap {
+        text-align: center;
+        vertical-align: middle;
+        margin-bottom: 100px;
+        padding-bottom: 100px;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0); /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+      }
+
+      h1,
+      h2 {
+        color: white;
+        font-family: "Ubuntu", sans-serif;
+        text-transform: uppercase;
+      }
+      h1 {
+        font-size: 5em;
+      }
+
+      .nametag {
+        background-color: #c43131;
+        border-radius: 25px;
+        text-align: center;
+        padding: 5px 0px 30px;
+        max-width: 500px;
+        width: 100%;
+        margin: 5% auto;
+        transform: rotate(4deg);
+        box-shadow: 1px 2px 5px black;
+        animation: jello 2s ease 0s 1 normal forwards; /* animation från webcode.tools */
+      }
+
+      @keyframes jello {
+        0% {
+          transform: scale3d(1, 1, 1);
         }
-        
-        
-        .wrap {
-            text-align: center;
-            vertical-align: middle;
-            margin-bottom: 100px;
-            padding-bottom: 100px;
-            
-          }
-        
-        
-        .modal {
-            display: none; 
-            position: fixed; 
-            z-index: 1; /* Sit on top */
-            padding-top: 100px; /* Location of the box */
-            left: 0;
-            top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            overflow: auto; /* Enable scroll if needed */
-            background-color: rgb(0,0,0); /* Fallback color */
-            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-            
-          }
-                
-          h1, h2{
-  color:white;
-  font-family: 'Ubuntu', sans-serif;
-  text-transform:uppercase;
-}
-h1{
-  font-size:5em;
-}
-          
-          .nametag{
-  background-color:#c43131;
-  border-radius:25px;
-  text-align:center;
-  padding:5px 0px 30px;
-  max-width:500px;
-  width:100%;
-  margin: 5% auto;
-  transform:rotate(4deg);
-  box-shadow: 1px 2px 5px black;
-  animation: jello 2s ease 0s 1 normal forwards; /* animation från webcode.tools */
-}
 
-@keyframes jello {
-  0% {
-    transform: scale3d(1, 1, 1);
-  }
+        30% {
+          transform: scale3d(1.25, 0.75, 1);
+        }
 
-  30% {
-    transform: scale3d(1.25, 0.75, 1);
-  }
+        40% {
+          transform: scale3d(0.75, 1.25, 1);
+        }
 
-  40% {
-    transform: scale3d(0.75, 1.25, 1);
-  }
+        50% {
+          transform: scale3d(1.15, 0.85, 1);
+        }
 
-  50% {
-    transform: scale3d(1.15, 0.85, 1);
-  }
+        65% {
+          transform: scale3d(0.95, 1.05, 1);
+        }
 
-  65% {
-    transform: scale3d(0.95, 1.05, 1);
-  }
+        75% {
+          transform: scale3d(1.05, 0.95, 1);
+        }
 
-  75% {
-    transform: scale3d(1.05, 0.95, 1);
-  }
-
-  100% {
-    transform: scale3d(1, 1, 1);
-  }
-}
-.nt_header{
- line-height:5px;
- padding: 0 0 10px;
-}
-.nt_name{
-  background-color:white;
-  padding:15px 0px;
-}
-.nt_name input{
-  color:black;
-  font-family: 'Rock Salt', cursive;
-  font-size:2.25em;
-  transform: rotate(-6deg);
-  border-width:0px;
-  text-align:center;
-  width:100%;
-  background:transparent;
-}
-.nt_name input:focus{
-  outline:none;
-}
-
-          
-          </style>
-    </head>
-    <body onload="onLoad()">
-        
-        
-           
-        <div id="welcome" class="modal">
-
-            <div class="nametag">
-                <div class="nt_header">
-                  <h1>Hello</h1>
-                  <h2 id="ans">My name is</h2>
-                </div> 
-                <div id="nameinput" class="nt_name">
-                  <input type="text" id="name" placeholder="your name here">
-                </div>
-              </div>
-          
-          </div>
-       
-        <div class="wrap">
-                <img src="css/sphinxly.jpeg" width="50%"/>
-        
+        100% {
+          transform: scale3d(1, 1, 1);
+        }
+      }
+      .nt_header {
+        line-height: 5px;
+        padding: 0 0 10px;
+      }
+      .nt_name {
+        background-color: white;
+        padding: 15px 0px;
+      }
+      .nt_name input {
+        color: black;
+        font-family: "Rock Salt", cursive;
+        font-size: 2.25em;
+        transform: rotate(-6deg);
+        border-width: 0px;
+        text-align: center;
+        width: 100%;
+        background: transparent;
+      }
+      .nt_name input:focus {
+        outline: none;
+      }
+    </style>
+  </head>
+  <body onload="onLoad()">
+    <div id="welcome" class="modal">
+      <div class="nametag">
+        <div class="nt_header">
+          <h1>Hello</h1>
+          <h2 id="ans">My name is</h2>
         </div>
+        <div id="nameinput" class="nt_name">
+          <input type="text" id="name" placeholder="your name here" />
+        </div>
+      </div>
+    </div>
 
+    <div class="wrap">
+      <img src="css/sphinxly.jpeg" width="60%" />
+    </div>
 
+    <script type="text/javascript">
+      var modal = document.getElementById("welcome");
+      var nameinput = document.getElementById("nameinput");
 
-        <script type="text/javascript">
-
-            var modal = document.getElementById("welcome");
-            var nameinput = document.getElementById("nameinput");
- 
-           
-            window.onclick = function(event) { // stäng utan att knapp för det
-              if (event.target == modal) {
-                modal.style.display = "none";
-              }
-            }
-
-
-            // Fråga namn
-            var namesArr = []; 
-            var ls = localStorage.getItem('namespace.vistited');
-
-            function onLoad() {
-              modal.style.display = "block";
-               
-            namesArr.push('Hejpa');
-            namesArr.push('Dejpa');  
-            localStorage.setItem('names', JSON.stringify(namesArr)); 
-            console.log(namesArr);
-
-              if (ls == null) {
-                localStorage.setItem('namespace.vistited', 1)
-                document.getElementById("ans").innerHTML = "Whats your name?";
-                save();
-                
-        } 
-           if (ls > 0) {
-            document.getElementById("ans").innerHTML = "Welcome back..";
-
-            nameinput.style.display = "none";
+      window.onclick = function (event) {
+        // stäng om klick på modal.
+        if (event.target == modal) {
+          modal.style.display = "none";
         }
-              
-            }  
-            
-    function save() {
+      };
 
-	
-	input = document.getElementById("name").value;
-    if (input == "") { // ingen input inget händer.
+      
+      var namesArr = [];
+      var ls = localStorage.getItem("namespace.vistited");
 
-    } else {
-        document.getElementById("ans").innerHTML =  input;
-        namesArr.push(ans);
-    localStorage.setItem('names', JSON.stringify(namesArr));
-    // setTimeout(function(){modal.style.display = "none";}, 2000) om man vill att den försvinner utan klick?
-    }
+      function onLoad() {
+        modal.style.display = "block";
+        if (localStorage.getItem("names") == null) {
+          namesArr.push("Hejpa");
+          namesArr.push("Dejpa");
+          localStorage.setItem("names", JSON.stringify(namesArr));
+        }
+        // Fråga namn
+        if (ls == null) {
+          document.getElementById("ans").innerHTML = "Whats your name?";
+          save();
+        } else {
+          document.getElementById("ans").innerHTML = "Welcome back..";
+          nameinput.style.display = "none";
+        }
+      }
 
-    
-}
+      function save() {
+        let input = document.getElementById("name").value;
+        if (input !== "") {
+          document.getElementById("ans").innerHTML = input;
+          namesArr.push(input);
+          localStorage.setItem("names", JSON.stringify(namesArr));
+          localStorage.setItem("namespace.vistited", 1);
+          nameinput.style.display = "none";
+          // setTimeout(function(){modal.style.display = "none";}, 2000) // om man vill avsluta utan att trycka på skärmen
+        }
+      }
 
+      // för att spara med "enter"
+      document
+        .getElementById("name")
+        .addEventListener("keypress", function event(e) {
+          if (e.which == 13) {
+            save();
+            document.removeEventListener("keypress", event);
+          }
+        });
 
-// för att spara med enter hehe
-document.addEventListener('keypress', function(e) {
-  if(e.which == 13) {
-    save();
-  }
-})
-
-// för att spara med enter hehe
-document.addEventListener('keypress', function(e) {
-  if(e.which == 13) {
-    save();
-  }
-})
-
-document.focusout("keydown", function(e) { //focusout funkar för iphones "klar" knapp.
-save() 
-})
-            </script>
-
-       
-    </body>
+      window.ontouchstart = function (event) {
+        // stäng för touch
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+    </script>
+  </body>
 </html>
